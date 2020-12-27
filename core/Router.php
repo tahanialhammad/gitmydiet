@@ -1,0 +1,57 @@
+<?php
+namespace App\Core;
+class Router
+{
+    public $routes = [
+        'GET'=>[],
+        'POST'=>[]
+    ];
+
+    public static function load($file)
+    {
+        $router = new static;
+
+        require $file;
+
+        return $router;
+    }
+
+    // public function define($routes)
+    // {
+    //     $this->routes = $routes;
+    // }
+
+    public function get($uri, $controller)
+    {
+        $this->routes['GET'][$uri]=$controller; //ex: >>'uri'=>'foo' >> $getRoutes['names]='controller/foo.php
+    }
+
+    public function post($uri, $controller)
+    {
+        $this->routes['POST'][$uri]=$controller;
+    }
+
+    public function direct($uri, $requestType)
+    {
+        if (array_key_exists($uri, $this->routes[$requestType]))
+        {
+            return $this->callAction(
+                ...explode('@', $this->routes[$requestType][$uri])
+            ); 
+        }
+        //var_dump($_SERVER);
+        throw new Exception('No route defined for this URI.');
+    }
+
+    protected function callAction($controller, $action)
+    {
+        $controller = "App\\Controllers\\{$controller}";
+        $controller =new $controller;
+        //die(var_dump($controller, $action)); //return string(15) "PagesController" string(4) "home"
+        if(! method_exists($controller, $action)){
+            throw new Exception('{$controller} does not respond to the {$action} action ');
+        }
+        // return (new $controller)->$action();
+        return $controller->$action();
+    }
+}
