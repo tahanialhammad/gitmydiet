@@ -8,3 +8,8 @@ $router->get('show', 'PagesController@show');
 
 $router->get('users', 'UsersController@index');
 $router->post('users', 'UsersController@store');
+
+$router->get('login', 'LoginController@index');
+$router->post('login', 'LoginController@auth');
+
+$router->get('profile', 'ProfileController@index');

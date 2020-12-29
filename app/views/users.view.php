@@ -3,7 +3,7 @@
 <h3>De deelnemers</h3>
 <h5>Doe mee door uw naam te sturen</h5>
 
-<div class="col-3">
+<div class="col-3 container">
     <form method="POST" action="/users">
     <div class="mb-3 row">
         <label for="username" class="form-label">User name</label>
@@ -16,9 +16,8 @@
     </div>
 
     <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <input name="password" type="password" class="form-control" id="inputPassword">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <input name="password" type="password" class="form-control" id="inputPassword">
     </div>
     
     <button type="submit" class="btn btn-primary" >Submit</button>
@@ -30,5 +29,6 @@
 <?php foreach ($users  as $user) : ?>
     <li><?=  $user->name; ?></li>
 <?php endforeach; ?>
+
 
 <?php require('partials/footer.php'); ?>

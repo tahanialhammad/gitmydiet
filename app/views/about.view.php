@@ -1,7 +1,8 @@
 <?php require('partials/head.php'); ?>
 <div class="container">
     <div class="row">
-        <h1>Over <?= $company; ?></h1>
+        <!-- <h1>Over <?= $company; ?></h1> -->
+        <h1><?= $siteinfo['name']; ?></h1>
         <div class="col-md-6 mt-5">
             <h3>JUNIOR WEB DEVELOPER</h3>
             <h5>Dit project is gemaakt met</h5>

@@ -15,16 +15,19 @@
         </li>
     
         <li class="nav-item">
-          <a class="nav-link" href="/diet">Diet</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="show">Diet show</a>
+          <a class="nav-link" href="/diet">All Diet</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/users">Users</a></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/contact">Contact</a></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">My Profile</a></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a></a>
         </li>
       </ul>
     </div>
