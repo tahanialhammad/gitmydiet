@@ -17,7 +17,13 @@ class QueryBuilder
 
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
-    
+    // test select 1 record
+    public function selectOne($table, $id)
+    {
+        $statement = $this->pdo->prepare("select * from {$table} where id={$id}");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
 
     public function insert($table, $parameters)
     {
