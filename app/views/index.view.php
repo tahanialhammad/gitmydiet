@@ -14,9 +14,9 @@
   <div class="collapse col-5" id="register">
     <div class="card card-body">
         <form method="POST" action="/users">
-            <input name="name" id="username" class="form-control mb-2"  placeholder="Name"></input>
-            <input name="email" type="email" class="form-control mb-2" id="useremail" placeholder="name@example.com">
-            <input name="password" type="password" class="form-control mb-2" id="inputPassword"  placeholder="password">
+            <input name="name" id="username" class="form-control mb-2"  placeholder="Name" required></input>
+            <input name="email" type="email" class="form-control mb-2" id="useremail" placeholder="name@example.com" required>
+            <input name="password" type="password" class="form-control mb-2" id="inputPassword"  placeholder="password" required>
             <button type="submit" class="btn btn-primary mb-2" >Registreren</button>
         </form>
     </div>

@@ -7,17 +7,17 @@
     <form method="POST" action="/users">
     <div class="mb-3 row">
         <label for="username" class="form-label">User name</label>
-        <input name="name" id="username" class="form-control mb-2" ></input>
+        <input name="name" id="username" class="form-control mb-2" required></input>
     </div>
     
     <div class="mb-3 row">
         <label for="useremail" class="form-label">Email address</label>
-        <input name="email" type="email" class="form-control" id="useremail" placeholder="name@example.com">
+        <input name="email" type="email" class="form-control" id="useremail" placeholder="name@example.com" required>
     </div>
 
     <div class="mb-3 row">
         <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-        <input name="password" type="password" class="form-control" id="inputPassword">
+        <input name="password" type="password" class="form-control" id="inputPassword" required>
     </div>
     
     <button type="submit" class="btn btn-primary" >Submit</button>

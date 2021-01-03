@@ -3,6 +3,17 @@
    
 <div class="container">
 <h1>Op een dag dieet</h1>
+<button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#newdiet" aria-expanded="false" aria-controls="newdiet">
+    Add New Diet
+</button>
+<div class="collapse col-8" id="newdiet">
+    <form method="POST" action="/diet">
+        <input name="title" id="diettitle" class="form-control mb-2" required></input>
+        <input name="description" id="description" class="form-control mb-2" required></input>
+        <input name="images" id="dietimages" class="form-control mb-2" required ></input>
+        <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+</div>
 
 <h3>Een groep dieetmethoden voor één dag</h3>
 
