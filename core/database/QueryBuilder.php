@@ -11,7 +11,7 @@ class QueryBuilder
 
     public function selectAll($table)
     {
-        $statement = $this->pdo->prepare("select * from {$table}");
+        $statement = $this->pdo->prepare("select * from {$table} order by id desc");
 
         $statement->execute();
 
@@ -25,6 +25,13 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    //test delet
+    public function delete($table)
+    {
+        $statement = $this->pdo->prepare("DELETE FROM $table WHERE id={$_GET['id']}");
+        $statement->execute();
+        echo "Record deleted successfully";
+    }
     public function insert($table, $parameters)
     {
         $sql = sprintf(

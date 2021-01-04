@@ -9,6 +9,8 @@ $router->post('diet', 'DietController@store');
 
 $router->get('show', 'ShowController@show');
 $router->post('show', 'ShowController@store');
+//test delet
+$router->get('show/delete', 'ShowController@delete');
 
 $router->get('users', 'UsersController@index');
 $router->post('users', 'UsersController@store');

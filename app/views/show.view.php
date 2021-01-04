@@ -24,5 +24,6 @@
             </div>
         <?php endforeach; ?>
     </div>
-
+    <a href="/show/delete?id=<?=  $diet->id; ?>">Delet</a>
+    
 <?php require('partials/footer.php'); ?>

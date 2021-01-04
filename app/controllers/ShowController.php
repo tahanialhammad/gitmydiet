@@ -15,4 +15,11 @@ class ShowController
         return view('show');
     }
 
+     //test delet diet
+     public function delete()
+     {
+        App::get('database')->delete('alldiets');
+        return redirect('diet');
+     }
+
 }
