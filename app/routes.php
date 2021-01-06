@@ -11,6 +11,14 @@ $router->get('show', 'ShowController@show');
 $router->post('show', 'ShowController@store');
 //test delet
 $router->get('show/delete', 'ShowController@delete');
+//test Update Like
+$router->get('show/like', 'ShowController@like');
+
+//test comments
+$router->post('show/comments', 'ShowController@comment');
+//test add to my diet list
+$router->get('show/add', 'ShowController@addtomydiet');
+$router->get('mydietday', 'MydietdayController@index');
 
 $router->get('users', 'UsersController@index');
 $router->post('users', 'UsersController@store');
