@@ -9,6 +9,9 @@ class PagesController
         //reciev the request , delegate ask db for some records, returen a response
         $diets = App::get('database')->selectAll('alldiets');
         // $users  = App::get('database')->selectAll('users');
+        $loguser = $_SESSION['user'] ;
+        var_dump($loguser);
+        
         return view('index', [
             // 'users'=>$users,
             'diets'=>$diets //name of table

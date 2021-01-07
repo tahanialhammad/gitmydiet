@@ -13,21 +13,29 @@
         <li class="nav-item">
           <a class="nav-link" href="/about">About</a>
         </li>
-    
         <li class="nav-item">
           <a class="nav-link" href="/diet">All Diet</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/users">Users</a></a>
+          <a class="nav-link" href="/users">All Users</a></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a></a>
+          <a class="nav-link" href="/mydietday">MyDiet</a></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/profile">My Profile</a></a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/register">Register</a></a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/login">Login</a></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a></a>
         </li>
       </ul>
     </div>

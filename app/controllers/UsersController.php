@@ -9,15 +9,15 @@ class UsersController
         return view('users', compact('users')); 
     }
 
-    public function store()
-    {
-        App::get('database')->insert('users',[
-            'name'=>$_POST['name'],
-            'email'=>$_POST['email'],
-            'password'=>$_POST['password']
-        ]);
+    // public function store()
+    // {
+    //     App::get('database')->insert('users',[
+    //         'name'=>$_POST['name'],
+    //         'email'=>$_POST['email'],
+    //         'password'=>$_POST['password']
+    //     ]);
         
-        // header('Location: /users');//redirect to all users page
-        return redirect('users');
-    }
+    //     // header('Location: /users');//redirect to all users page
+    //     return redirect('users');
+    // }
 }

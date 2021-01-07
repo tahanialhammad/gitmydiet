@@ -37,11 +37,12 @@
                 <div class="card-body">
                     <a href="/show?id=<?=  $diet->id; ?>"><h5 class="card-title"><?=  $diet->title; ?></h5></a>
                     <p class="card-text"><?= $diet->description; ?></p>
-                    <p class="card-text"><small class="text-muted">
-                        <button class="like btn btn-link"><i class="fa fa-heart"></i></button>
-                        <input type="number" value="0" class="likenum">
-                        <?= $diet->likes; ?> Like 
-                    </small></p>
+                </div>
+                <div class="card-footer">
+                    <a href="/show/like?id=<?=  $diet->id; ?>">
+                        <i class="fa fa-heart"></i>
+                    </a> <span><?= $diet->likes; ?> Like </span>
+                    <a href="/show/add?id=<?=  $diet->id; ?>" class="btn btn-secondary">Add To MyDiet</a>
                 </div>
                 </div>
             </div>

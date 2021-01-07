@@ -1,9 +1,9 @@
 <?php require('partials/head.php'); ?>
 
-    <h1>Diet show</h1>
+    <h1>Show Diet</h1>
     <div class="container">
         <?php foreach ($diets as $diet) : ?>
-            <div class="card bg-dark text-white mb-3">
+            <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-md-4">
                     <img class="img-fluid" src="<?=$diet->images?>" alt="<?= $diet->title; ?>">
@@ -21,6 +21,29 @@
                     </div>
                     </div>
                 </div>
+                <p class="m-5"><?= $diet->description; ?></p>
+                <table class="table container m-3">
+                    <thead>
+                        <tr>
+                        <th scope="col">Time</th>
+                        <th scope="col">Day Schema</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">moring</th>
+                        <td>Mark</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">midden</th>
+                        <td>Jacob</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">savond</th>
+                        <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         <?php endforeach; ?>
     </div>

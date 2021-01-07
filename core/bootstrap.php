@@ -1,5 +1,6 @@
 <?php
 use App\Core\App;
+session_start();
 
 App::bind('config',require 'config.php');
 //$config = App::get('config');

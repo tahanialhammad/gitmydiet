@@ -13,7 +13,7 @@
     <button type="submit" class="btn btn-primary" >Submit</button>
 </form>
 </div>
-<h3>Een groep dieetmethoden voor één dag</h3>
+<h3>Een groep dieet methoden voor één dag</h3>
 <hr>
 
 <div class="container">
@@ -21,18 +21,19 @@
     <div class="card bg-dark text-white mb-3">
     <div class="row g-0">
         <div class="col-md-4">
-        <img class="img-fluid rounded-circle" style="height:15rem; width:15rem" src="<?=$diet->images?>" alt="<?= $diet->title; ?>">
+        <img class="img-fluid" style="height:15rem; width:15rem" src="<?=$diet->images?>" alt="<?= $diet->title; ?>">
         </div>
         <div class="col-md-8">
         <div class="card-header"><?= $diet->published; ?></div>
         <div class="card-body">
             <a href="/show?id=<?=  $diet->id; ?>"><h5 class="card-title"><?=  $diet->title; ?></h5></a>
             <p class="card-text text-truncate"><?= $diet->description; ?></p>
-            <p class="card-footer">
-                <a href="/show/like?id=<?=  $diet->id; ?>">
-                    <i class="fa fa-heart"></i>
-                </a> <span><?= $diet->likes; ?> Like</span>
-            </p>
+        </div>
+        <div class="card-footer">
+            <a href="/show/like?id=<?=  $diet->id; ?>">
+                <i class="fa fa-heart"></i>
+            </a> <span><?= $diet->likes; ?> Like </span>
+            <a href="/show/add?id=<?=  $diet->id; ?>" class="btn btn-secondary">Add To MyDiet</a>
         </div>
         </div>
     </div>
