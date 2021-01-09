@@ -6,7 +6,7 @@ class PagesController
 {
     public function home()
     {
-        //test logn user
+        //test login user
         $loguser = $_SESSION['user'] ;
         var_dump($loguser);
         $bestDiet = App::get('database')->selectoneJoin('alldiets', '( SELECT max(likes) best FROM mydietdb.alldiets) mostlike', 'mostlike.best', 'alldiets.likes');
