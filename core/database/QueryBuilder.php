@@ -1,4 +1,5 @@
 <?php
+//namespace App\Core\Database;
 
 class QueryBuilder
 {
@@ -29,6 +30,29 @@ class QueryBuilder
           $statement->execute();
           return $statement->fetchAll(PDO::FETCH_CLASS);
       }
+
+    //test login 
+    // public function query($query, $executeString = array())
+    // {
+    //     $dbh = App::get('database')->pdo;
+
+    //     try {
+    //         $stmt = $dbh->prepare($query);
+    //         $stmt->execute($executeString);
+    //     } catch (\PDOException $e) {
+    //         var_dump($e->getMessage());
+    //     }
+    //     return $stmt;
+    // }
+  //test login 2
+  public function query()
+  {
+      $statement = $this->pdo->prepare("SELECT * FROM users WHERE email='{$_REQUEST['email']}'");
+      //var_dump($statement);
+      $statement->execute();
+
+      return $statement->fetchAll(PDO::FETCH_CLASS);
+  }
     //test select all comments per diet 
     public function selectAllCom($table)
     {
@@ -68,13 +92,7 @@ class QueryBuilder
         $statement->execute();
         echo "Record update successfully";
     }
-    // //test Select where
-    // public function select($table1 ,$col, $condition)
-    // {
-    //     $statement = $this->pdo->prepare("SELECT * FROM $table1 WHERE {$col}={$condition}");
-    //     $statement->execute();
-    //     return $statement->fetchAll(PDO::FETCH_CLASS);
-    // }
+    
     //test Join 
     public function selectJoin($table1 , $table2, $on1 , $on2)
     {
@@ -83,6 +101,22 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    // test join one
+    public function selectoneJoin($table1 , $table2, $on1 , $on2)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM $table1 JOIN $table2 on {$on1} = {$on2}");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+    // SELECT * FROM mydietdb.alldiets
+    // JOIN
+    // ( SELECT max(likes) best FROM mydietdb.alldiets) mostlike
+    // ON mostlike.best = alldiets.likes;
+    // -- SELECT max(likes) best FROM mydietdb.alldiets;
+    
+
+
+//Insert To DB
     public function insert($table, $parameters)
     {
         $sql = sprintf(

@@ -3,7 +3,6 @@ namespace App\Controllers;
 use App\Core\App;
 class DietController
 {
-
     public function diet()
     {
          $diets = App::get('database')->selectAll('alldiets');
@@ -20,7 +19,6 @@ class DietController
             'description'=>$_POST['description'],
             'images'=>$_POST['images']
         ]);
-        // header('Location: /users');//redirect to all users page
         return redirect('diet');
     }
 

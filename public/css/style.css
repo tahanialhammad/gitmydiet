@@ -1,4 +1,40 @@
-body{
+/* body{
     background-image: url("https://images.unsplash.com/photo-1592642131178-3f8d38b92fde?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
     background-size: cover;
-}    
+}     */
+.landing{
+    background-color: #073a07;
+    color: #c8cac6;
+}
+
+.navbar-light .navbar-nav .nav-link ,
+.navbar-light .navbar-brand{
+    color:  #edfdd5;
+}
+.navbar-light .navbar-nav .nav-link.active {
+color: yellowgreen;
+}
+.btn-primary{
+    background-color: yellowgreen;
+    color: #073a07;
+    border-color:yellowgreen ;
+}
+.btn-primary:hover{
+    background-color:#073a07 ;
+    color: yellowgreen;
+    border-color:yellowgreen ;
+}
+a{
+    color: yellowgreen ;
+}
+a:hover{
+    color:  #edfdd5;
+}
+.special a:hover{color:#073a07 ;}
+/* btn after click */
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+    color: #edfdd5;
+    background-color: yellowgreen ;
+    border-color: yellowgreen ;
+    box-shadow: 0 0 0 0.25rem rgb(200 238 105 / 50%);
+}

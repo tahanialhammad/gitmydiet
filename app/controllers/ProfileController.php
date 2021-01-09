@@ -6,6 +6,10 @@ class ProfileController
 {
     public function index()
     {
-       return view('profile');
+        if (isset($_SESSION) && isset($_SESSION['user']))
+        {
+        $loguser =$_SESSION['user'];
+       return view('profile', compact('loguser'));
+    }else{return redirect('login');}
     }
 }
