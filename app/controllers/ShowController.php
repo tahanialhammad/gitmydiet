@@ -5,32 +5,46 @@ class ShowController
 {
     public function show()
     {
-        //test 2 goed  op this moment
+        //Select one Record with All Comments (v-1)
         $diets = App::get('database')->selectOne('alldiets');
         $comments =  App::get('database')->selectAllCom('comments');
          return view('show', [
              'diets'=>$diets,
              'comments'=>$comments
          ]);
-         //  var_dump($_REQUEST['id']);
+         //var_dump($_REQUEST['id']);
         return view('show');
     }
-    //test Add To MyDiet
+    // //Add To MyDiet (v-1)
+    // public function addtomydiet()
+    // {
+    //     App::get('database')->insert('mydiet',[
+    //        'diet_id'=>  $_GET['id']
+    //      ]);
+    //      return redirect('mydietday');
+    // }
+
+    //Add To MyDiet (v-2)
     public function addtomydiet()
     {
+        if (isset($_SESSION) && isset($_SESSION['user']))
+        {
+        $loguser =$_SESSION['user'];
         App::get('database')->insert('mydiet',[
-           'diet_id'=>  $_GET['id']
-         ]);
-         return redirect('mydietday');
+        'diet_id'=>  $_GET['id'],
+        'user_id'=> $loguser ["id"]
+        ]);
+        return redirect('mydietday');
+        }else{return redirect('login');}
     }
-     //test delet diet
+     //Delet a diet (v-1)
      public function delete()
      {
         App::get('database')->delete('alldiets');
         return redirect('diet');
      }
 
-    //test update like
+    //Update like (v-1)
     public function like()
     {
         App::get('database')->like('alldiets');

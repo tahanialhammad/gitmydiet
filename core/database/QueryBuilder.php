@@ -92,7 +92,7 @@ class QueryBuilder
         $statement->execute();
         echo "Record update successfully";
     }
-
+    
     //test Join 
     public function selectJoin($table1 , $table2, $on1 , $on2)
     {
@@ -100,6 +100,22 @@ class QueryBuilder
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
+
+    // test join one
+    public function selectoneJoin($table1 , $table2, $on1 , $on2)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM $table1 JOIN $table2 on {$on1} = {$on2}");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+    // SELECT * FROM mydietdb.alldiets
+    // JOIN
+    // ( SELECT max(likes) best FROM mydietdb.alldiets) mostlike
+    // ON mostlike.best = alldiets.likes;
+    // -- SELECT max(likes) best FROM mydietdb.alldiets;
+    
+
+
 //Insert To DB
     public function insert($table, $parameters)
     {
