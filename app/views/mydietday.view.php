@@ -16,16 +16,6 @@
   
    <p><?= $mydiet->description; ?></p>
 <?php endforeach; ?>
-<p>
-    <?php
-    $diettime = mktime($mydiet->published);
-    $dietexpire = $diettime +60;
-    $currentime=time();
-    echo ('diettime: '.$diettime. ' dietexpire: '. $dietexpire .' currentime: '. $currentime);
-    if($dietexpire === $currentime){echo 'Diet is Expire';}
-    ?>
-</p>
-
 
 </div>
 <?php require('partials/footer.php'); ?>

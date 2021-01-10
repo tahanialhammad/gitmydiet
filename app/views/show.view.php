@@ -13,9 +13,12 @@
                 <i class="fa fa-plus-square"></i> Add To MyDiet</a>
                 </button>
                 <button type="button" class="btn btn-primary">
+                <?php foreach($dietlike as $dietlike): ?>
                     <a href="/show/like?id=<?=  $diet->id; ?>" class="btn btn-primary">
                         <i class="fa fa-heart"></i>
-                    </a> <span><?= $diet->likes; ?> Like</span>
+                        <span><?= $dietlike->likes; ?> Like</span>
+                     </a>
+                <?php endforeach; ?>
                 </button>
             </div>
             <div class="card mb-3">

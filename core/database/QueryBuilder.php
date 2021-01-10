@@ -1,5 +1,4 @@
 <?php
-//namespace App\Core\Database;
 
 class QueryBuilder
 {
@@ -16,34 +15,15 @@ class QueryBuilder
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
-    // // test select 1
-    // public function selectOne($table, $id)
-    // {
-    //     $statement = $this->pdo->prepare("select * from {$table} where id={$id}");
-    //     $statement->execute();
-    //     return $statement->fetchAll(PDO::FETCH_CLASS);
-    // }
-      // test select 2
-      public function selectOne($table)
-      {
-          $statement = $this->pdo->prepare("select * from {$table} where {$table}.id={$_REQUEST['id']}");
-          $statement->execute();
-          return $statement->fetchAll(PDO::FETCH_CLASS);
-      }
 
-    //test login 
-    // public function query($query, $executeString = array())
-    // {
-    //     $dbh = App::get('database')->pdo;
+  // test selectOne v-4
+  public function selectOne($select, $condition1, $condition2)
+  {
+      $statement = $this->pdo->prepare("select $select where {$condition1}={$condition2}");
+      $statement->execute();
+      return $statement->fetchAll(PDO::FETCH_CLASS);
+  }
 
-    //     try {
-    //         $stmt = $dbh->prepare($query);
-    //         $stmt->execute($executeString);
-    //     } catch (\PDOException $e) {
-    //         var_dump($e->getMessage());
-    //     }
-    //     return $stmt;
-    // }
   //test login 2
   public function query()
   {
@@ -56,28 +36,12 @@ class QueryBuilder
     //test select all comments per diet 
     public function selectAllCom($table)
     {
-        $statement = $this->pdo->prepare("select * from {$table} where diet_id={$_REQUEST['id']}");
+        $statement = $this->pdo->prepare("select * from {$table} where diet_id='{$_REQUEST['id']}'");
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
-    //test global select one recored and check item
-    public function checkItems($select, $from, $value)
-    {
-        $statement = $this->pdo->prepare("SELECT $select FROM $from WHERE $select=?");
-        $statement->execute(array($value));
-        $count= $statement->rowCount();
-        // echo $count;
-        return $count;
-    }
-//count records number by using column name
-    public function countItem($item, $table)
-    {
-        $statement = $this->pdo->prepare("SELECT COUNT($item) FROM $table");
-        $statement->execute();
-        return $statement->fetchColumn();
-    }
-//teset delet
+    //teset delet
     public function delete($table)
     {
         $statement = $this->pdo->prepare("DELETE FROM $table WHERE id={$_GET['id']}");
@@ -85,14 +49,18 @@ class QueryBuilder
         echo "Record deleted successfully";
     }
 
-    //test update like
-    public function like($table)
-    {
-        $statement = $this->pdo->prepare("UPDATE $table SET likes=likes+1 WHERE id={$_GET['id']}");
-        $statement->execute();
-        echo "Record update successfully";
-    }
+    // SELECT * FROM mydietdb.alldiets
+    // left join (
+    // SELECT diet_id, sum(likes) likes FROM mydietdb.dietlike group by diet_id
+    // ) likes  on likes.diet_id= alldiets.id;
     
+    public function selectSome($someqry)
+    {
+        $statement = $this->pdo->prepare("$someqry");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+
     //test Join 
     public function selectJoin($table1 , $table2, $on1 , $on2)
     {
