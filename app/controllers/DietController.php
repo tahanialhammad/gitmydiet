@@ -5,7 +5,11 @@ class DietController
 {
     public function diet()
     {
-         $diets = App::get('database')->selectAll('alldiets');
+        $diets = App::get('database')->selectSome('SELECT * FROM mydietdb.alldiets
+        left join ( SELECT diet_id, sum(likes) likes FROM mydietdb.dietlike 
+        group by diet_id ) likes  on likes.diet_id= alldiets.id
+        order by alldiets.id desc');
+        
          return view('diet', [
              'diets'=>$diets //name of table
          ]);

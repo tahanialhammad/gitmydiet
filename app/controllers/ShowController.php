@@ -6,23 +6,17 @@ class ShowController
     public function show()
     {
         //Select one Record with All Comments (v-1)
-        $diets = App::get('database')->selectOne('alldiets');
+        $diets = App::get('database')->selectOne('* from alldiets', 'alldiets.id', $_GET['id']);
+        $dietlike = App::get('database')->selectOne('diet_id, sum(likes) likes FROM mydietdb.dietlike', 'diet_id', $_REQUEST['id']);
         $comments =  App::get('database')->selectAllCom('comments');
          return view('show', [
              'diets'=>$diets,
-             'comments'=>$comments
+             'comments'=>$comments,
+             'dietlike'=>$dietlike
          ]);
          //var_dump($_REQUEST['id']);
         return view('show');
     }
-    // //Add To MyDiet (v-1)
-    // public function addtomydiet()
-    // {
-    //     App::get('database')->insert('mydiet',[
-    //        'diet_id'=>  $_GET['id']
-    //      ]);
-    //      return redirect('mydietday');
-    // }
 
     //Add To MyDiet (v-2)
     public function addtomydiet()
@@ -40,25 +34,41 @@ class ShowController
      //Delet a diet (v-1)
      public function delete()
      {
+        if (isset($_SESSION) && isset($_SESSION['user']))
+        {
+        $loguser =$_SESSION['user'];
         App::get('database')->delete('alldiets');
         return redirect('diet');
+        }else{return redirect('login');}
      }
 
-    //Update like (v-1)
-    public function like()
-    {
-        App::get('database')->like('alldiets');
-        return redirect('diet');
-    }
+     //test update like (v-2)
+     public function like()
+     {  
+        if (isset($_SESSION) && isset($_SESSION['user']))
+        {
+         $loguser =$_SESSION['user'];
+         App::get('database')->insert('dietlike',[
+             'user_id'=>$loguser ["id"],
+            'diet_id'=> $_GET['id'],
+            'likes'=> 1
+         ]);
+         return redirect('diet');
+        }else{return redirect('login');}
+     }
 
     public function comment()
     {
+        if (isset($_SESSION) && isset($_SESSION['user']))
+        {
+         $loguser =$_SESSION['user'];
         // $dietId= $_GET['id'];
         App::get('database')->insert('comments',[
             'body'=>$_POST['body'],
-           'diet_id'=>  $_GET['id']
+           'diet_id'=>  $_GET['id'],
+           'user_id'=> $loguser['id']
         ]);
-
         return redirect('show');
+        }else{return redirect('login');}
     }
 }

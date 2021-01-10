@@ -18,9 +18,6 @@
           <a class="nav-link" href="/diet">All Diet</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/users">All Users</a></a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="/mydietday">MyDiet</a></a>
         </li>
         <li class="nav-item">

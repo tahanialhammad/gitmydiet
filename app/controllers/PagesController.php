@@ -7,9 +7,13 @@ class PagesController
     public function home()
     {
         //test login user
-        $loguser = $_SESSION['user'] ;
-        var_dump($loguser);
-        $bestDiet = App::get('database')->selectoneJoin('alldiets', '( SELECT max(likes) best FROM mydietdb.alldiets) mostlike', 'mostlike.best', 'alldiets.likes');
+        //$loguser = $_SESSION['user'] ;
+        //var_dump($loguser);
+
+        $bestDiet =  App::get('database')->selectSome('SELECT * FROM mydietdb.alldiets
+        left join ( SELECT diet_id, sum(likes) likes FROM mydietdb.dietlike 
+        group by diet_id ) likes  on likes.diet_id= alldiets.id order by likes desc limit 1');
+        
         $newDiet = App::get('database')->selectoneJoin('alldiets', '( SELECT max(id) new FROM mydietdb.alldiets) newdiet', 'newdiet.new', 'alldiets.id');
         return view('index', [
             'bestDiet'=> $bestDiet,
