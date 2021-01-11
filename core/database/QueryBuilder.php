@@ -49,6 +49,14 @@ class QueryBuilder
         echo "Record deleted successfully";
     }
 
+    //test delet2
+    public function deleteOneMydiet($table, $dietId, $userId)
+    {
+        $statement = $this->pdo->prepare("DELETE FROM $table WHERE diet_id={$dietId} and user_id={$userId} ");
+        $statement->execute();
+        echo "Record deleted successfully";
+    }
+
     // SELECT * FROM mydietdb.alldiets
     // left join (
     // SELECT diet_id, sum(likes) likes FROM mydietdb.dietlike group by diet_id

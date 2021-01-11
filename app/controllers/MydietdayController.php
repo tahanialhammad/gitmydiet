@@ -16,4 +16,17 @@ class MydietdayController
         }else{return redirect('login');}
     }
    
+    public function deleteMydiet()
+    {
+       if (isset($_SESSION) && isset($_SESSION['user']))
+       {
+       $loguser =$_SESSION['user'];
+      $checkboxdiet = $_REQUEST['diet_id'];
+    //   var_dump($checkboxdiet);
+
+       App::get('database')->deleteOneMydiet('mydiet',$checkboxdiet, $loguser['id'] );
+       return redirect('mydietday');
+       }else{return redirect('login');}
+    }
+
 }
