@@ -15,6 +15,11 @@
 </div>
   
    <p><?= $mydiet->description; ?></p>
+   <button type="button" class="btn btn-danger">
+        <a href="/mydietday/deleteMydiet?diet_id=<?=  $mydiet->diet_id; ?>" class="btn btn-danger">
+        <i class="fa fa-trash"></i> Delete this Diet</a>
+    </button>
+
 <?php endforeach; ?>
 
 </div>

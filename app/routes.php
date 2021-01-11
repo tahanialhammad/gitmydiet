@@ -18,6 +18,7 @@ $router->post('show/comments', 'ShowController@comment');
 //test add to my diet list
 $router->get('show/add', 'ShowController@addtomydiet');
 $router->get('mydietday', 'MydietdayController@index');
+$router->get('mydietday/deleteMydiet', 'MydietdayController@deleteMydiet');
 
 //Register 1
 $router->get('users', 'UsersController@index');
