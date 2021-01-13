@@ -21,10 +21,7 @@ class MydietdayController
        if (isset($_SESSION) && isset($_SESSION['user']))
        {
        $loguser =$_SESSION['user'];
-      $checkboxdiet = $_REQUEST['diet_id'];
-    //   var_dump($checkboxdiet);
-
-       App::get('database')->deleteOneMydiet('mydiet',$checkboxdiet, $loguser['id'] );
+       App::get('database')->deleteOne('mydiet',$_REQUEST['diet_id'], $loguser['id'] );
        return redirect('mydietday');
        }else{return redirect('login');}
     }
