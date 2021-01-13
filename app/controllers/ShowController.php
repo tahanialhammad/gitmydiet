@@ -42,18 +42,26 @@ class ShowController
         }else{return redirect('login');}
      }
 
-     //test update like (v-2)
+     //test update like (v-3)
      public function like()
-     {  
-        if (isset($_SESSION) && isset($_SESSION['user']))
+     {   if (isset($_SESSION) && isset($_SESSION['user']))
         {
-         $loguser =$_SESSION['user'];
-         App::get('database')->insert('dietlike',[
-             'user_id'=>$loguser ["id"],
-            'diet_id'=> $_GET['id'],
-            'likes'=> 1
-         ]);
-         return redirect('diet');
+        $loguser =$_SESSION['user'];
+        $checkLike = App::get('database')->countLike('likes', 'dietlike', $_REQUEST['id'], $loguser ["id"] );
+           //var_dump($checkLike);
+            if($checkLike > 0)
+                {
+                    App::get('database')->deleteOne('dietlike',$_REQUEST['id'], $loguser ["id"]);
+                    return redirect('diet');
+                }
+                else{
+                    App::get('database')->insert('dietlike',[
+                    'user_id'=>$loguser ["id"],
+                    'diet_id'=> $_GET['id'],
+                    'likes'=> 1
+                    ]);
+                    return redirect('diet');
+                }
         }else{return redirect('login');}
      }
 

@@ -35,7 +35,7 @@
     <div class="col-md-12 col-lg-6">
         <img class="img-fluid mx-auto d-block" src="<?=$diet->images?>" alt="<?= $diet->title; ?>"  style="height:20rem;width:20rem; overflow: hidden;">
     </div>
-    <div class="p-5 col-sm-12 col-lg-6 shadow">
+    <div class="p-5 col-sm-12 col-lg-6  bg-light shadow">
         <h4>Het meest populaire dieet</h4>
         <h5><a href="/show?id=<?=  $diet->id; ?>"><?=  $diet->title; ?></a></h5>
         <p class="p-4 bg-light"><?= $diet->description; ?></p>

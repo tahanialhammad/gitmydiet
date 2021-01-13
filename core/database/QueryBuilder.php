@@ -40,7 +40,13 @@ class QueryBuilder
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
-
+    //Count Like 
+    public function countLike($item, $table, $value1, $value2)
+    {
+        $statement = $this->pdo->prepare("SELECT COUNT($item) FROM $table where diet_id={$value1} and user_id={$value2}");
+        $statement->execute();
+        return $statement->fetchColumn();
+    }
     //teset delet
     public function delete($table)
     {
@@ -50,9 +56,9 @@ class QueryBuilder
     }
 
     //test delet2
-    public function deleteOneMydiet($table, $dietId, $userId)
+    public function deleteOne($table, $condition1, $condition2)
     {
-        $statement = $this->pdo->prepare("DELETE FROM $table WHERE diet_id={$dietId} and user_id={$userId} ");
+        $statement = $this->pdo->prepare("DELETE FROM $table WHERE diet_id={$condition1} and user_id={$condition2} ");
         $statement->execute();
         echo "Record deleted successfully";
     }
