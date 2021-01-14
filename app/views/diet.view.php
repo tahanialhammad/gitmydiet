@@ -4,14 +4,19 @@
 <div class="container">
 <h1>Op een dag dieet</h1>
 <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#newdiet" aria-expanded="false" aria-controls="newdiet">
-    Add New Diet
+Voeg een nieuw dieet toe
 </button>
 <div class="collapse col-8" id="newdiet">
 <form method="POST" action="/diet">
-    <input name="title" id="diettitle" class="form-control mb-2" required></input>
-    <input name="description" id="description" class="form-control mb-2" maxlength="255" required></input>
-    <input name="images" id="dietimages" class="form-control mb-2" required ></input>
-    <textarea name="article" id="dietarticle"  class="form-control mb-2" cols="30" rows="10"></textarea>
+    <input name="title" id="diettitle" class="form-control mb-2"  placeholder="Dieet Titel" required></input>
+    <input name="description" id="description" class="form-control mb-2" maxlength="255" placeholder="Dieet korte beschrijving"  required></input>
+    <input name="images" id="dietimages" class="form-control mb-2" placeholder="Dieet foto" required ></input>
+
+    <input name="breakfast" id="dietbreakfast" class="form-control mb-2" maxlength="255" placeholder="Diet breakfast schema"></input>
+    <input name="Inbetween" id="dietInbetween" class="form-control mb-2" maxlength="255" placeholder="Diet tussendoor schema"></input>
+    <input name="lunch" id="dietlunch" class="form-control mb-2" maxlength="255" placeholder="Diet lunch schema"></input>
+    <input name="supper" id="dietsupper" class="form-control mb-2" maxlength="255" placeholder="Diet avondeten schema"></input>
+    <textarea name="article" id="dietarticle"  class="form-control mb-2" cols="30" rows="10" placeholder="Dieet artikel"></textarea>
     <button type="submit" class="btn btn-primary" >Submit</button>
 </form>
 </div>
@@ -22,9 +27,9 @@
 <div class="container">
 <?php foreach ($diets as $diet) : ?>
     <div class="card bg-dark text-white mb-3">
-    <div class="row g-0" style="max-height:15rem; overflow: hidden;">
-        <div class="col-md-4">
-        <img class="img-fluid" src="<?=$diet->images?>" alt="<?= $diet->title; ?>">
+    <div class="row g-0">
+        <div class="col-md-4"style="max-height:15rem; overflow: hidden;">
+        <img class="img-fluid" src="<?=$diet->images?>" alt="<?= $diet->title; ?>" >
         </div>
         <div class="col-md-8">
         <div class="card-header"><?= $diet->published; ?></div>
@@ -37,7 +42,7 @@
                 <i class="fa fa-heart"></i>
                 <span><?= $diet->likes; ?> Like </span>
             </a>
-            <a href="/show/add?id=<?=  $diet->id; ?>" class="btn btn-secondary">Add To MyDiet</a>
+            <a href="/show/add?id=<?=  $diet->id; ?>" class="btn btn-secondary">Voeg toe aan MijnDieet</a>
         </div>
         </div>
     </div>

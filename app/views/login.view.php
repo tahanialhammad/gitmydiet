@@ -1,7 +1,7 @@
 <?php require('partials/head.php'); ?>
-<div class="container-fluid">
+<div class="container-fluid p-5">
 <h1>LOGIN</h1>
-<div class="container col-4 shadow-lg p-5">
+<div class="container col-md-6 shadow-lg p-5">
     <form class="px-3 py-2" method="POST" action="/login" >
         <div class="mb-3 row">
             <label for="email" class="form-label">E-mail</label>

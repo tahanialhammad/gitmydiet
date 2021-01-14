@@ -1,11 +1,13 @@
 <?php require('partials/head.php'); ?>
-<div class="container">
+<div class="container-fluid p-5">
+<div class="container-fluid col-sm-12 col-lg-6 text-center p-3">
+    <h2 class="pb-3"><?= $siteinfo['name']; ?></h2>
+    <p><?= $siteinfo['description']; ?></p>
+    <hr>
+</div>
     <div class="row">
-        <!-- <h1>Over <?= $company; ?></h1> -->
-        <h1><?= $siteinfo['name']; ?></h1>
-        <div class="col-md-6 mt-5">
+        <div class="col-md-6 my-5">
             <h3>JUNIOR WEB DEVELOPER</h3>
-            <h5>Dit project is gemaakt met</h5>
             <ul class="list-group mt-3">
                 <li class="list-group-item">PHP</li>
                 <li class="list-group-item">MySql Database</li>
@@ -21,5 +23,4 @@
     </div>
 </div>
     
-
 <?php require('partials/footer.php'); ?>

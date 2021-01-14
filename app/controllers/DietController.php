@@ -21,7 +21,12 @@ class DietController
         App::get('database')->insert('alldiets',[
             'title'=>$_POST['title'],
             'description'=>$_POST['description'],
-            'images'=>$_POST['images']
+            'images'=>$_POST['images'],
+            'article'    =>$_POST['article'],
+            'breakfast'  =>$_POST['breakfast'],
+            'Inbetween'  =>$_POST['Inbetween'],
+            'lunch'      =>$_POST['lunch'],
+            'supper'     =>$_POST['supper'],
         ]);
         return redirect('diet');
     }

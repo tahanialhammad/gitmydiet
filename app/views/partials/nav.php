@@ -12,16 +12,16 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
+          <a class="nav-link" href="/about">Over ons</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/diet">All Diet</a>
+          <a class="nav-link" href="/diet">Alle dieet</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/mydietday">MyDiet</a></a>
+          <a class="nav-link" href="/mydietday">MijnDieet</a></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/profile">My Profile</a></a>
+          <a class="nav-link" href="/profile">Mijn Profile</a></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/contact">Contact</a></a>
