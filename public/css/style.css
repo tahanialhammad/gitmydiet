@@ -1,7 +1,8 @@
-/* body{
-    background-image: url("https://images.unsplash.com/photo-1592642131178-3f8d38b92fde?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
-    background-size: cover;
-}     */
+body{
+    /* background-image: url("https://images.unsplash.com/photo-1592642131178-3f8d38b92fde?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
+    background-size: cover; */
+    min-height: 100vh;
+}    
 .landing{
     background-color: #073a07;
     color: #c8cac6;
@@ -15,7 +16,8 @@
 .navbar-light .navbar-nav .nav-link:hover{
 color: yellowgreen;
 }
-.btn-primary{
+.btn-primary,
+footer .btn-primary .register:hover{
     background-color: yellowgreen;
     color: #073a07;
     border-color:yellowgreen ;
@@ -39,3 +41,15 @@ a:hover{
     border-color: yellowgreen ;
     box-shadow: 0 0 0 0.25rem rgb(200 238 105 / 50%);
 }
+
+footer{
+    background-color:#073a07 ;
+    color:  #edfdd5;
+}
+footer .btn-primary .register{
+    background-color: transparent;
+    border-color: yellowgreen;
+    color: yellowgreen;
+}
+
+.rotate{transform: rotate(180deg);}
