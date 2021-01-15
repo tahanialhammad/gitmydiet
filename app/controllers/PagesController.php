@@ -26,7 +26,8 @@ class PagesController
         $siteinfo=[
             'name'  => 'one day diet',
             'auther' => 'Tahani alhammad',
-            'location' => 'Netherland'
+            'location' => 'Nederland-Groningen',
+            'description' => 'Ik ben Tahani Al Hammad web developer in opleiding bij CodeGorilla. Het idee voor dit project zijn eendaagse dieetmethodes, ontvangen uit een database MYSQL en verbonden met PHP PDO. Abonnees van websites kunnen het gebruiken en hun favoriete dieet aan hun pagina (MyDiet) toevoegen'
         ];
         return view('about', ['siteinfo'=>$siteinfo]);
     }
