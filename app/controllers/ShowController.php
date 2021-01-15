@@ -76,7 +76,7 @@ class ShowController
            'diet_id'=>  $_GET['id'],
            'user_id'=> $loguser['id']
         ]);
-        return redirect('show');
+        return redirect('show?id=' . $_GET['id']);
         }else{return redirect('login');}
     }
 }

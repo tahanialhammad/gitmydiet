@@ -15,7 +15,6 @@
             <h5 class="card-title"><?= $mydiet->title; ?></h5>
             <p class="card-text"><small class="text-muted"><?= $mydiet->published; ?></small></p>
             <p class="card-text"><?= $mydiet->description; ?></p>
-            <p class="card-text"><?= $mydiet->article; ?></p>
         </div>
         </div>
     </div>
