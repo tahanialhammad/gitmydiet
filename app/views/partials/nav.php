@@ -31,7 +31,7 @@
             <i class="fa fa-user-circle"></i>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/login">Loing</a></li>
+            <li><a class="dropdown-item" href="/login">Inloggen</a></li>
             <li><a class="dropdown-item" href="/logout">Logout</a></li>
             <li><a class="dropdown-item" href="/register">Register</a></li>
           </ul>
