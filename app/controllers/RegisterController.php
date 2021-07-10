@@ -20,6 +20,7 @@ class RegisterController
        //var_dump($data);
         App::get('database')->insert('users',$data);
        
+        // header('Location: /users');//redirect to all users page
         return redirect('users');
     }
 

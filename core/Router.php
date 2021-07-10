@@ -40,7 +40,8 @@ class Router
             ); 
         }
         //var_dump($_SERVER);
-        throw new Exception('No route defined for this URI.');
+        
+        throw new \Exception('No route defined for this URI.');
     }
 
     protected function callAction($controller, $action)

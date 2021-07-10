@@ -20,6 +20,11 @@
                      </a>
                 <?php endforeach; ?>
                 </button>
+                <!-- <button type="button" class="btn btn-primary">
+                    <a href="/show/like?id=<?=  $diet->id; ?>" class="btn btn-primary">
+                        <i class="fa fa-heart"></i>
+                    </a> <span><?= $diet->likes; ?> Like</span>
+                </button> -->
             </div>
             <div class="card mb-3">
             <div class="row g-0">
@@ -64,7 +69,9 @@
             </div>
         <?php endforeach; ?>
     </div>
- 
+    <!-- <?php foreach($dietlike as $dietlike): ?>
+    <h1><?= $dietlike->likes; ?></h1>
+    <?php endforeach; ?> -->
     <div class="container">
         <form method="POST" action="/show/comments?id=<?=  $diet->id; ?>">
         <div class="input-group mb-3">

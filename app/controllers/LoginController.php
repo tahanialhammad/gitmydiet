@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 use App\Core\App;
-
+//use App\Core\Database\QueryBuilder;
 
 class LoginController
 {
@@ -33,8 +33,12 @@ class LoginController
      */
     public function login()
     {
+        // $securityIssue = decryptToken($_REQUEST['crf_token'], $_SESSION['token']) === false;
+        
         if (isset($_REQUEST['email']) && isset($_REQUEST['password'])) {
-
+           // $sql = "SELECT * FROM users WHERE email='{$_REQUEST['email']}'";
+            
+            //$res = QueryBuilder::query($sql)->fetch();
             $res = App::get('database')->query();
             //var_dump($res);
             // var_dump($_REQUEST);
@@ -43,9 +47,18 @@ class LoginController
                 if (password_verify($_REQUEST['password'], $res[0]->password) ) {
                     $this->setUserSession($res[0]);
                     redirect('');
+                // return json_encode([
+                    //     'success'  => true,
+                    //     'message'  => "Succesfull loged in.",
+                    //     'redirect' =>  ""
+                    // ]);
                 } else {
                     echo 'Wrong password';
                     return redirect('login');
+                    // return json_encode([
+                    //     'success' => false,
+                    //     'message' => "Username and/or password incorrect"
+                    // ]);
                 }
             }
         }

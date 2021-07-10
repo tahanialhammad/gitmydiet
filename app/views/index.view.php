@@ -1,5 +1,5 @@
 <?php require('partials/head.php'); ?>
-
+<!--or php include ('partials/head.php')-->
 <main class="container-fluid landing">
 <div class="row">
     <div class="p-5 col-md-12 col-lg-6">
@@ -26,7 +26,9 @@
         </div>
     </div>
     <div class="col-md-12 col-lg-6">
+        <!-- <img class="img-fluid" src="../public/img/pic3.png" alt=""> -->
         <img class="img-fluid" src="https://cdn.pixabay.com/photo/2018/04/17/23/04/grilled-vegetables-3329075_1280.png" alt="">
+        <!-- <img class="img-fluid" src="https://cdn.pixabay.com/photo/2018/04/17/23/04/skewer-3329078_1280.png" alt=""> -->
     </div>
 </main> <!--End Landing Page-->
 
@@ -59,6 +61,12 @@
 
 </div>
 <div class="container-fluid">
+<!-- <img src="https://cdn.pixabay.com/photo/2016/02/23/17/28/mango-1218129_1280.png" alt="">
+
+<img src="https://cdn.pixabay.com/photo/2018/04/17/23/04/grilled-vegetables-3329075_1280.png" alt="">
+<img src="https://cdn.pixabay.com/photo/2018/04/17/23/04/skewer-3329078_1280.png" alt=""> -->
 <img class="img-fluid rotate pb-0" src="https://cdn.pixabay.com/photo/2019/04/13/14/06/salad-4124699_1280.png" alt="">
+
+
 </div>
 <?php require('partials/footer.php'); ?>

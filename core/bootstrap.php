@@ -1,5 +1,6 @@
 <?php
 use App\Core\App;
+//use App\Core\Database\QueryBuilder;
 session_start();
 
 App::bind('config',require 'config.php');

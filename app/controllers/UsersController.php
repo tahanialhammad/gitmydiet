@@ -5,13 +5,25 @@ class UsersController
 {
     public function index()
     {
-        if (isset($_SESSION) && isset($_SESSION['user']))
-        {
-        $loguser =$_SESSION['user'];
+        $loguser =$_SESSION['user'] ;
         //var_dump($loguser ["name"]);
+        
         // $users  = App::get('database')->selectAll('users');
         // return view('users', compact('users')); 
         return view('users', compact('loguser')); 
-        }else{return redirect('login');}
     }
+
+    // public function store()
+    // {
+    //     App::get('database')->insert('users',[
+    //         'name'=>$_POST['name'],
+    //         'email'=>$_POST['email'],
+    //         'password'=>$_POST['password']
+    //     ]);
+        
+    //     // header('Location: /users');//redirect to all users page
+    //     return redirect('users');
+    // }
+
+
 }

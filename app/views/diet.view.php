@@ -42,6 +42,12 @@ Voeg een nieuw dieet toe
                 <i class="fa fa-heart"></i>
                 <span><?= $diet->likes; ?> Like </span>
             </a>
+            <!-- <form method="POST" action="/show/like?id=<?=  $diet->id; ?>" >
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-heart"></i>
+                    <span><?= $diet->likes; ?> Like </span>
+                </button>
+            </form> -->
             <a href="/show/add?id=<?=  $diet->id; ?>" class="btn btn-secondary">Voeg toe aan MijnDieet</a>
         </div>
         </div>
@@ -49,6 +55,32 @@ Voeg een nieuw dieet toe
     </div>
 <?php endforeach; ?>
 </div>
+
+
+<!-- <div class="container">
+    <?php foreach ($diets as $diet) : ?>
+    <div class="card bg-dark text-white mb-2">
+        <div class="card-header">Datum</div>
+        <div class="card-body">
+            <?php if ($diet->completed): ?>
+                <h5 class="card-title"><s><?=  $diet->title; ?></s></h5>
+                <p class="card-text"><?= $diet->description; ?></p>
+            <?php else: ?>
+                <h5 class="card-title"><?=  $diet->title; ?></h5>
+                <p class="card-text"><?= $diet->description; ?></p>
+            <?php endif; ?>
+            <div class="card-footer">
+                <button class="like"><i class="fa fa-heart"></i></button>
+                <input type="number" value="0" class="likenum">
+                Like
+            </div>
+            <h3><?= $diet->likes; ?></h3>
+        </div>
+    </div>
+        
+    <?php endforeach; ?>
+</div> -->
+
 
 </div>
 

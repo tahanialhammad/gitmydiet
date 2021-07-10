@@ -1,0 +1,9 @@
+<img src="../public/css/pic1.png" alt="">
+<img src="https://cdn.pixabay.com/photo/2017/01/11/20/35/heart-1972825_960_720.png" alt="">
+<img src="https://cdn.pixabay.com/photo/2016/02/23/17/28/mango-1218129_1280.png" alt="">
+<img src="https://cdn.pixabay.com/photo/2017/09/01/19/05/breadbasket-2705179_1280.png" alt="">
+<img src="https://cdn.pixabay.com/photo/2018/04/17/23/04/food-3329079_1280.png" alt="">
+<img src="https://cdn.pixabay.com/photo/2018/04/17/23/04/grilled-vegetables-3329075_1280.png" alt="">
+<img src="https://cdn.pixabay.com/photo/2018/04/17/23/04/skewer-3329078_1280.png" alt="">
+<img src="https://cdn.pixabay.com/photo/2019/04/13/14/06/salad-4124699_1280.png" alt="">
+<img src="https://cdn.pixabay.com/photo/2020/06/05/19/52/girl-5264295_1280.png" alt="">

@@ -7,7 +7,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
@@ -17,6 +17,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/diet">Alle dieet</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="/users">All Users</a></a>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="/mydietday">MijnDieet</a></a>
         </li>
@@ -31,7 +34,7 @@
             <i class="fa fa-user-circle"></i>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/login">Inloggen</a></li>
+            <li><a class="dropdown-item" href="/login">Loing</a></li>
             <li><a class="dropdown-item" href="/logout">Logout</a></li>
             <li><a class="dropdown-item" href="/register">Register</a></li>
           </ul>
